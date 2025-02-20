@@ -1,0 +1,17 @@
+%{
+%}
+
+%%
+[a-z A-Z 0-9]+@[a-z]+(.com|.in) {printf("\nGMAIL -ID VALID\n");}
+.+ {printf("\nGMAIL -ID INVALID\n");}
+
+%%
+int yywrap(void) {}
+
+int main()
+{
+printf("\nEnter GMAIL-ID:");
+yylex();
+printf("\n");
+return 0;
+}
