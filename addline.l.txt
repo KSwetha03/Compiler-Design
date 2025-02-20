@@ -1,0 +1,14 @@
+%{
+int ln=0;
+%}
+%%
+.* {ln++; fprintf(yyουt,"\n%d:%s",ln,yytext);}
+%%
+int yywrap(){}
+int main()
+{
+printf("Enter a Date of Birth:");
+yyin=fopen("oddoreven.txt","r");
+yyout=fopen("outnew.txt","w");
+yylex();
+} 
